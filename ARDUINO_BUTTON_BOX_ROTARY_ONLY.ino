@@ -12,9 +12,7 @@ struct rotarydef {
   volatile unsigned char state; // Internal state
 };
 
-rotarydef rotary[1] { // 1 needed here?
-  {0,1,24,25,0},
-};
+rotarydef rotary {0,1,24,25,0};
 
 #define DIR_CCW			0x10
 #define DIR_CW			0x20

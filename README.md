@@ -19,6 +19,7 @@ https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ## Setup development environment
 
+Install the Arduino IDE from Arduino.cc
 Install the [Joystick library](https://github.com/MHeironimus/ArduinoJoystickLibrary) by copying the Joystick folder into the Arduino IDE Library folder.
 
 
