@@ -6,7 +6,6 @@ View YouTube Video here for setup instructions: https://youtu.be/Z7Sc4MJ8RPM
 
 How to assign the buttons to keyboard: https://youtu.be/kbuyXz9sNw0
 
-Joystick library: https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 Please consider supporting: https://www.patreon.com/AMSTUDIO
 
@@ -17,6 +16,10 @@ Thanks!
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+## Setup development environment
+
+Install the [Joystick library](https://github.com/MHeironimus/ArduinoJoystickLibrary) by copying the Joystick folder into the Arduino IDE Library folder.
 
 
 ## Parts
