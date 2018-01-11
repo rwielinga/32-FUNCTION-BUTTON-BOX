@@ -19,7 +19,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-NoDeriv
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 
-###Parts
+## Parts
 - Switch Covers https://goo.gl/rqkD64
 - Momentary toggle eBay https://goo.gl/PXEJ1m
 - Start button https://goo.gl/i1gjnW
