@@ -13,7 +13,6 @@
 #define NUMROWS 5
 #define NUMCOLS 5
 
-
 byte buttons[NUMROWS][NUMCOLS] = {
   {0,1,2,3,4},
   {5,6,7,8,9},
