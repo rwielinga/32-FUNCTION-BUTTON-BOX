@@ -1,4 +1,4 @@
-//BUTTON BOX 
+//BUTTON BOX
 //USE w ProMicro
 //Tested in WIN10 + Assetto Corsa
 //AMSTUDIO
@@ -86,12 +86,12 @@ const unsigned char ttable[7][4] = {
 };
 #endif
 
-byte rowPins[NUMROWS] = {21,20,19,18,15}; 
-byte colPins[NUMCOLS] = {14,16,10,9,8}; 
+byte rowPins[NUMROWS] = {21,20,19,18,15};
+byte colPins[NUMCOLS] = {14,16,10,9,8};
 
-Keypad buttbx = Keypad( makeKeymap(buttons), rowPins, colPins, NUMROWS, NUMCOLS); 
+Keypad buttbx = Keypad( makeKeymap(buttons), rowPins, colPins, NUMROWS, NUMCOLS);
 
-Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID, 
+Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
   JOYSTICK_TYPE_JOYSTICK, 32, 0,
   false, false, false, false, false, false,
   false, false, false, false, false);
@@ -100,7 +100,7 @@ void setup() {
   Joystick.begin();
   rotary_init();}
 
-void loop() { 
+void loop() {
 
   CheckAllEncoders();
 
@@ -111,11 +111,11 @@ void loop() {
 void CheckAllButtons(void) {
       if (buttbx.getKeys())
     {
-       for (int i=0; i<LIST_MAX; i++)   
+       for (int i=0; i<LIST_MAX; i++)
         {
-           if ( buttbx.key[i].stateChanged )   
+           if ( buttbx.key[i].stateChanged )
             {
-            switch (buttbx.key[i].kstate) {  
+            switch (buttbx.key[i].kstate) {
                     case PRESSED:
                     case HOLD:
                               Joystick.setButton(buttbx.key[i].kchar, 1);
@@ -125,7 +125,7 @@ void CheckAllButtons(void) {
                               Joystick.setButton(buttbx.key[i].kchar, 0);
                               break;
             }
-           }   
+           }
          }
      }
 }
