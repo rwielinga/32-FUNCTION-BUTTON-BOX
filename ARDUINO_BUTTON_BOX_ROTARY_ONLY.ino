@@ -49,8 +49,8 @@ void setup() {
 
 void loop() { 
 	unsigned char result = rotary_process();
-	if (result == DIR_CCW) { Joystick.setButton(rotary.ccwchar, 1); delay(50); Joystick.setButton(rotary.ccwchar, 0); };
-	if (result == DIR_CW) { Joystick.setButton(rotary.cwchar, 1); delay(50); Joystick.setButton(rotary.cwchar, 0); };
+	if (result == DIR_CCW) { Serial.print("L"); Joystick.setButton(rotary.ccwchar, 1); delay(50); Joystick.setButton(rotary.ccwchar, 0); };
+	if (result == DIR_CW) { Serial.print("R"); Joystick.setButton(rotary.cwchar, 1); delay(50); Joystick.setButton(rotary.cwchar, 0); };
 }
 
 void rotary_init() {
@@ -60,20 +60,17 @@ void rotary_init() {
 		digitalWrite(rotary.pin2, HIGH);
 }
 
-unsigned char prev_pinstate = 0;
-
 unsigned char rotary_process() {
 	// Determine rotation action
-	unsigned char pinstate = (digitalRead(rotary.pin2) << 1) | digitalRead(rotary.pin1);
-  // should be 0x20 for CW or 0x10 for CCW or 00000000 for no action i guess. Both pins high should not happen
-  if (prev_pinstate != pinstate) {
-    Serial.println("New pinstate: " + pinstate); // print the pinstate if it changed
-    prev_pinstate = pinstate;
-  }
-	volatile unsigned char lookedupstate = ttable[rotary.state & 0xf][pinstate];
-	if (rotary.state != lookedupstate) {
-    Serial.println("New rotarystate: " + lookedupstate); // print the lookedupstate for the rotary if changed
-    rotary.state = lookedupstate;
-  }
+
+  unsigned char pinstate = (digitalRead(rotary.pin2) << 1) | digitalRead(rotary.pin1);
+		// pin1 ingedrukt: bin 10
+		// pin2 ingedruk: bin 1
+		// geen ingedrukt: bin 11
+
+  rotary.state = ttable[rotary.state & 0xf][pinstate];
+		// pin1 ingedrukt: bin 100
+		// pin2 ingedrukt: bin 10
+
 	return (rotary.state & 0x30);
 }
