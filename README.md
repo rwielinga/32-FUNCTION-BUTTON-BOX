@@ -18,10 +18,17 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-NoDeriv
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ## Setup development environment
-
 Install the Arduino IDE from Arduino.cc
 Install the [Joystick library](https://github.com/MHeironimus/ArduinoJoystickLibrary) by copying the Joystick folder into the Arduino IDE Library folder.
 
+## Wiring diagrams
+Button Wiring:
+
+![Button wiring](button-wiring.png)
+
+Rotary Wiring:
+
+![Rotary wiring](rotary-wiring.png)
 
 ## Parts
 - Switch Covers https://goo.gl/rqkD64
